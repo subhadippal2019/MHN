@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1611602763614.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3063085953",
+    "id" : "C3CB6054",
+    "lastKnownWriteTime" : 1611602826,
+    "last_content_update" : 1611602826913,
+    "path" : "~/Documents/Packages/MHN/R/bcup/rMHN_code.R",
+    "project_path" : "R/bcup/rMHN_code.R",
+    "properties" : {
+        "cursorPosition" : "47,0",
+        "scrollLine" : "35"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
