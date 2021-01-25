@@ -43,7 +43,7 @@ Gamma_Positive_G<-function(N,alpha,beta,gamma){ # N: sample size
 #' hist(ss$sample,prob=TRUE, col="grey")
 #' lines(density(ss$sample))
 #' @export
-Gamma_Positive_N_old<-function(N,alpha,beta,gamma){ # N: sample size
+Gamma_Positive_N<-function(N,alpha,beta,gamma){ # N: sample size
   m=(gamma+sqrt(gamma^2+8*beta*(alpha-1)))/(4*beta);m # mode
 
   x <- rnorm(N,mean=m, sd=1/(2*beta))
@@ -73,7 +73,7 @@ Gamma_Positive_N_old<-function(N,alpha,beta,gamma){ # N: sample size
 
 
 
-Acceptence_Rate_G_old<-function(alpha,beta,gamma){
+Acceptence_Rate_G<-function(alpha,beta,gamma){
 
   delta_h=beta+(2*gamma^2-sqrt(4*gamma^4+32*alpha*beta*gamma^2))/(8*alpha)
 
@@ -95,7 +95,7 @@ Acceptence_Rate_G_old<-function(alpha,beta,gamma){
 
 
 
-Acceptence_Rate_N_old<-function(alpha,beta,gamma){
+Acceptence_Rate_N<-function(alpha,beta,gamma){
   m=(gamma+sqrt(gamma^2+8*beta*(alpha-1)))/(4*beta);m # mode
   set.seed(100)
   x=runif(10000,0,100)

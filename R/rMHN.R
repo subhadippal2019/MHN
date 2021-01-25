@@ -240,18 +240,19 @@ Acceptence_Rate_N<-function(alpha,beta,gamma){
 #ss$Acceptence_Rate
 
 test_N_N1<-function(){
-benchmark("a"={Gamma_Positive_N(N=1000, alpha = 1.1, beta = 1, gamma = 1)},
-          "b"={Gamma_Positive_N_1(N=1000, alpha = 1.1, beta = 1, gamma = 1)},
+ben1=benchmark("Gamma_Positive_N"={Gamma_Positive_N(N=1000, alpha = 1.1, beta = 1, gamma = 1)},
+          "Gamma_Positive_N_1"={Gamma_Positive_N_1(N=1000, alpha = 1.1, beta = 1, gamma = 1)},
           replications = 100,
           columns = c("test", "replications", "elapsed",
                       "relative", "user.self", "sys.self")
 )
-  benchmark("a"={replicate(n=10000, rMHN_negative_b( alpha = 1.1, beta = 1, gamma = -1))},
-            "b"={rMHN_negative_b_alt(n=10000, alpha = 1.1, beta = 1, gamma = -1)},
+  ben2=benchmark("replicate_rMHN_negative_b_alt"={replicate(n=10000, rMHN_negative_b_alt( alpha = 1.1, beta = 1, gamma = -1))},
+            "rMHN_negative_b"={rMHN_negative_b(n=10000, alpha = 1.1, beta = 1, gamma = -1)},
             replications = 200,
             columns = c("test", "replications", "elapsed",
                         "relative", "user.self", "sys.self")
   )
+  return(list(ben1, ben2))
 }
 
 
