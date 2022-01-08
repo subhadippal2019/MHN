@@ -10,9 +10,9 @@ rMHN(n = 1, alpha, beta, gamma)
 rMHN(n=10000,alpha=32,beta=20,gamma=-3)
 }
 \examples{
-ss=rMHN(N=10000,alpha=32,beta=20,gamma=-3)
-ss=rMHN(N=1000, alpha=3, beta=1, gamma=1)
-ss=rMHN(N=1000, alpha=3, beta=1, gamma=-1)
+ss=rMHN(n=10000,alpha=32,beta=20,gamma=-3)
+ss=rMHN(n=1000, alpha=3, beta=1, gamma=1)
+ss=rMHN(n=1000, alpha=3, beta=1, gamma=-1)
 hist(ss$sample,prob=TRUE, col="grey")
 lines(density(ss$sample))
 }
