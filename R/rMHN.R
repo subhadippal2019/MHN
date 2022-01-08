@@ -2,21 +2,20 @@
 #' rMHN(n=10000,alpha=32,beta=20,gamma=-3)
 #'
 #' @examples
-#' ss=rMHN(N=10000,alpha=32,beta=20,gamma=-3)
-#' ss=rMHN(N=1000, alpha=3, beta=1, gamma=1)
-#' ss=rMHN(N=1000, alpha=3, beta=1, gamma=-1)
+#' ss=rMHN(n=10000,alpha=32,beta=20,gamma=-3)
+#' ss=rMHN(n=1000, alpha=3, beta=1, gamma=1)
+#' ss=rMHN(n=1000, alpha=3, beta=1, gamma=-1)
 #' hist(ss$sample,prob=TRUE, col="grey")
 #' lines(density(ss$sample))
 #' @export
 rMHN<-function(n=1,alpha,beta,gamma){
 
-
+ # browser()
   if(gamma<=0){
     #sample=replicate(N,rMHN_negative_b(alpha=alpha,beta=beta,gamma=(gamma)))
     sample=rMHN_negative_b(n = n,  alpha=alpha,beta=beta,gamma=gamma)
     # AC_Rate=Acceptence_Rate_Neg(alpha,beta,gamma)
   }
-
   else if(gamma>0){
     if(alpha>1){
 
@@ -58,7 +57,7 @@ rMHN<-function(n=1,alpha,beta,gamma){
 #' @export
 rMHN_gamma_positive_G<-function(n,alpha,beta,gamma){ # N: sample size
   N=n
-  #browser()
+ # browser()
   #delta_h=beta+(2*gamma^2-sqrt(4*gamma^4+32*alpha*beta*gamma^2))/(8*alpha)
   delta_h=beta+(gamma^2-sqrt(gamma^4+8*alpha*beta*gamma^2))/(4*alpha)
 #browser()
@@ -67,7 +66,6 @@ rMHN_gamma_positive_G<-function(n,alpha,beta,gamma){ # N: sample size
   log_U <- log(runif(N,0,1))
   log_Rejection_Rate <- (-(beta-delta_h)*x^2+gamma*x-gamma^2/(4*(beta-delta_h)))
   sample_x <- x[log_U<=log_Rejection_Rate]  # in this step we can't gurantee the sample size =N
-
 
 
   size=N-length(sample_x)
